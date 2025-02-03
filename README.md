@@ -25,3 +25,9 @@ Simple weather website made using Express.JS. Project to showcase usage of APIs.
 ## Why Express.JS for this project?
 
 Express.JS is used in this project to generate back-end JavaScript code, allowing for the use of server-side features such as require, env, etc. The ".env" file is where any personal and sensitive information is stored, such as the API key. By not hard-coding the key in the client-side JavaScript, there are no security concerns about losing the key or leaking important sensitive information. In other words, express.js allows for server-side coding, giving access to env files that increase security and protects sensitive and personal data.
+
+## Screenshots
+### Before search is done
+![Main Page](/Screenshots/main.png)
+### After search is done
+![Data Page](/Screenshots/data.png)

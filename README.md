@@ -5,6 +5,8 @@ Simple weather website made using HTML, CSS and JavaScript. Project to showcase 
 * HTML
 * CSS
 * JavaScript
+* Node.JS
+* Express.JS
 
 ## API used:
 * [OpenWeatherMap](https://openweathermap.org/api)

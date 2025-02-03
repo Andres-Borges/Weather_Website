@@ -1,0 +1,14 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Simple Weather App website",
+  "main": "index.js",
+  "author": "Andres Borges",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "node-fetch": "^2.7.0",
+    "save": "^2.9.0"
+  }
+}

@@ -1,14 +1,13 @@
-function getWeather(){
-    const apiKey = 'fb7a4a6c167a0d1c7022d3fc45ae51ca';
+function getWeather() {
     const city = document.getElementById('city').value;
 
-    if(!city){
+    if (!city) {
         alert('Please enter a city!');
         return;
     }
 
-    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+    const currentWeatherUrl = `/weather?city=${city}`;
+    const forecastUrl = `/forecast?city=${city}`;
 
     fetch(currentWeatherUrl)
         .then(response => response.json())
@@ -31,7 +30,7 @@ function getWeather(){
         });
 }
 
-function displayWeather(data){
+function displayWeather(data) {
     const tempDivInfo = document.getElementById('temp-div');
     const weatherInfoDiv = document.getElementById('weather-info');
     const weatherIcon = document.getElementById('weather-icon');
@@ -42,16 +41,16 @@ function displayWeather(data){
     hourlyForecastDiv.innerHTML = '';
     tempDivInfo.innerHTML = '';
 
-    if(data.cod === '404'){
+    if (data.cod === '404') {
         weatherInfoDiv.innerHTML = `<p>${data.message}</p>`;
     }
-    else{
+    else {
         const cityName = data.name;
         const temperature = Math.round(data.main.temp - 273.15) //Converts to Celsius;
         const description = data.weather[0].description;
         const iconCode = data.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
-    
+
         const temperatureHTML = `<p>${temperature}°C</p>`;
         const weatherHTML = `<p>${cityName}</p><p>${description}</p>`;
 
@@ -64,11 +63,11 @@ function displayWeather(data){
     }
 }
 
-function displayHourlyForecast(hourlyData){
+function displayHourlyForecast(hourlyData) {
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
     const next24Hours = hourlyData.slice(0, 8);
 
-    next24Hours.forEach(item =>{
+    next24Hours.forEach(item => {
         const dateTime = new Date(item.dt * 1000);
         const hour = dateTime.getHours();
         const temperature = Math.round(item.main.temp - 273.15);
@@ -87,7 +86,7 @@ function displayHourlyForecast(hourlyData){
     });
 }
 
-function showImage(){
+function showImage() {
     const weatherIcon = document.getElementById('weather-icon');
     weatherIcon.style.display = 'block';
 }

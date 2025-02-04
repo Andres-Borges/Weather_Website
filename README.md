@@ -1,5 +1,5 @@
 # Simple Weather Website
-Simple weather website made using Express.JS. Project to showcase usage of APIs. [Click here to go to the website](https://andres-borges.github.io/Weather_Website/)
+Simple weather website made using Express.JS. Project to showcase usage of APIs.
 
 ## Built With:
 * HTML
